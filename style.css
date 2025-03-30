@@ -84,7 +84,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Navbar Styling */
 .navbar {
     position: fixed;
     top: 0;
@@ -137,7 +136,6 @@ body {
     transform: scaleX(1);
 }
 
-/* Mobile Menu */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
@@ -155,7 +153,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Social Icons */
 .social-icons {
     position: fixed;
     bottom: 20px;
@@ -177,7 +174,6 @@ body {
     color: #F4D03F;
 }
 
-/* Scroll Down Indicator */
 .scroll-down {
     position: fixed;
     bottom: 70px;
@@ -224,7 +220,6 @@ body {
     }
 }
 
-/* About Section */
 .about-section {
     padding: 100px 10vw;
     background-color: #161B22;
@@ -300,7 +295,6 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* Skills Section */
 .skills-section {
     padding: 100px 10vw;
     background-color: #0D1117;
@@ -371,7 +365,6 @@ body {
     min-width: 40px;
 }
 
-/* Technologies Section */
 .technologies-section {
     padding: 100px 10vw;
     background-color: #161B22;
@@ -454,7 +447,6 @@ body {
     font-weight: 500;
 }
 
-/* Projects Section */
 .projects-section {
     padding: 100px 10vw;
     background-color: #161B22;
@@ -590,7 +582,6 @@ body {
     font-size: 1.2rem;
 }
 
-/* Contact Section */
 .contact-section {
     padding: 100px 10vw;
     background-color: #0D1117;
@@ -653,6 +644,23 @@ body {
     resize: vertical;
 }
 
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: #ff6b6b;
+}
+
+.form-group input:invalid + .error-message,
+.form-group textarea:invalid + .error-message {
+    display: block;
+}
+
 .form-buttons {
     display: flex;
     gap: 1rem;
@@ -670,14 +678,22 @@ body {
 }
 
 .form-status {
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
     text-align: center;
-    margin-top: 1rem;
-    color: #F4D03F;
-    font-weight: 500;
-    min-height: 20px;
 }
 
-/* Scroll to Top Button */
+.form-status.success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+}
+
+.form-status.error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+}
+
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -707,7 +723,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
         padding: 100px 5vw 0;
@@ -778,7 +793,6 @@ body {
         bottom: 80px;
     }
 
-    /* About Section */
     .about-section {
         padding: 80px 5vw;
     }
@@ -791,7 +805,6 @@ body {
         font-size: 1rem;
     }
 
-    /* Skills Section */
     .skill-item {
         flex-direction: column;
         align-items: flex-start;
@@ -801,7 +814,6 @@ body {
         width: 100%;
     }
 
-    /* Technologies Section */
     .technologies-section {
         padding: 80px 5vw;
     }
@@ -814,7 +826,6 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
-    /* Projects Section */
     .projects-section {
         padding: 80px 5vw;
     }
@@ -823,7 +834,6 @@ body {
         font-size: 2rem;
     }
 
-    /* Contact Section */
     .contact-section {
         padding: 80px 5vw;
     }
