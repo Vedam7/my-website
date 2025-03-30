@@ -6,6 +6,12 @@
     <title>Vedanth Kokkula - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init('YOUR_EMAILJS_USER_ID'); // Replace with your actual EmailJS user ID
+        })();
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -64,21 +70,21 @@
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="90%"></div>
                         </div>
-                        <span class="skill-percent">85%</span>
+                        <span class="skill-percent">90%</span>
                     </div>
                     <div class="skill-item">
                         <span>CSS</span>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="85%"></div>
                         </div>
-                        <span class="skill-percent">75%</span>
+                        <span class="skill-percent">85%</span>
                     </div>
                     <div class="skill-item">
                         <span>JavaScript</span>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="80%"></div>
                         </div>
-                        <span class="skill-percent">40%</span>
+                        <span class="skill-percent">80%</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -88,7 +94,7 @@
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="75%"></div>
                         </div>
-                        <span class="skill-percent">80%</span>
+                        <span class="skill-percent">75%</span>
                     </div>
                     <div class="skill-item">
                         <span>C++</span>
@@ -102,14 +108,14 @@
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="50%"></div>
                         </div>
-                        <span class="skill-percent">70%</span>
+                        <span class="skill-percent">50%</span>
                     </div>
                     <div class="skill-item">
                         <span>Data Structures & Algorithms</span>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="65%"></div>
                         </div>
-                        <span class="skill-percent">70%</span>
+                        <span class="skill-percent">65%</span>
                     </div>
                 </div>
             </div>
@@ -127,7 +133,7 @@
                     <h3>HTML5</h3>
                     <div class="tech-progress">
                         <div class="progress-bar" style="width: 90%; background-color: #5DADE2;"></div>
-                        <span>85%</span>
+                        <span>90%</span>
                     </div>
                 </div>
                 <div class="tech-item">
@@ -137,7 +143,7 @@
                     <h3>CSS3</h3>
                     <div class="tech-progress">
                         <div class="progress-bar" style="width: 85%; background-color: #5DADE2;"></div>
-                        <span>75%</span>
+                        <span>85%</span>
                     </div>
                 </div>
                 <div class="tech-item">
@@ -147,7 +153,7 @@
                     <h3>JavaScript</h3>
                     <div class="tech-progress">
                         <div class="progress-bar" style="width: 80%; background-color: #5DADE2;"></div>
-                        <span>40%</span>
+                        <span>80%</span>
                     </div>
                 </div>
                 <div class="tech-item">
@@ -156,7 +162,7 @@
                     </div>
                     <h3>C++</h3>
                     <div class="tech-progress">
-                        <div class="progress-bar" style="width: 75%; background-color: #F4D03F;"></div>
+                        <div class="progress-bar" style="width: 70%; background-color: #F4D03F;"></div>
                         <span>70%</span>
                     </div>
                 </div>
@@ -167,7 +173,7 @@
                     <h3>Data Structures & Algorithms</h3>
                     <div class="tech-progress">
                         <div class="progress-bar" style="width: 65%; background-color: #F4D03F;"></div>
-                        <span>70%</span>
+                        <span>65%</span>
                     </div>
                 </div>
                 <div class="tech-item">
@@ -177,7 +183,7 @@
                     <h3>Responsive Design</h3>
                     <div class="tech-progress">
                         <div class="progress-bar" style="width: 85%; background-color: #5DADE2;"></div>
-                        <span>50%</span>
+                        <span>85%</span>
                     </div>
                 </div>
                 <div class="tech-item">
@@ -187,7 +193,7 @@
                     <h3>Git & GitHub</h3>
                     <div class="tech-progress">
                         <div class="progress-bar" style="width: 80%; background-color: #5DADE2;"></div>
-                        <span>65%</span>
+                        <span>80%</span>
                     </div>
                 </div>
             </div>
@@ -245,17 +251,18 @@
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <h2>Get In Touch</h2>
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                <input type="hidden" name="_subject" value="New message from portfolio">
-                <input type="text" name="_gotcha" style="display:none">
+            <form class="contact-form" id="contactForm">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="user_name" placeholder="Your Name" required>
+                    <div class="error-message" id="name-error"></div>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="user_email" placeholder="Your Email" required>
+                    <div class="error-message" id="email-error"></div>
                 </div>
                 <div class="form-group">
                     <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <div class="error-message" id="message-error"></div>
                 </div>
                 <div class="form-buttons">
                     <button type="submit" class="btn">Send Message</button>
@@ -263,7 +270,7 @@
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </button>
                 </div>
-                <div class="form-status"></div>
+                <div class="form-status" id="form-status"></div>
             </form>
         </div>
     </section>
@@ -286,20 +293,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        function sendToWhatsApp() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !message) {
-                alert('Please fill in at least your name and message');
-                return;
-            }
-            
-            const whatsappMessage = `New message from portfolio:%0A%0AName: ${name}%0AEmail: ${email || 'Not provided'}%0AMessage: ${message}`;
-            window.open(`https://wa.me/9765682905?text=${whatsappMessage}`, '_blank');
-        }
-    </script>
 </body>
 </html>
